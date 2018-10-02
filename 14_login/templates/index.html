@@ -1,0 +1,31 @@
+<!--
+Duckies - Daniel Gelfand and Ricky Lin
+SoftDev1 pd6
+K<14> Do I Know You?
+2018-10-02
+-->
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+
+    <title>Home</title>
+
+  </head>
+
+  <body>
+    <!--
+    Displays error message such as "Username not found"
+    -->
+    {% if error%}
+      {{error}}!<br><br>
+    {% endif %}
+    <form action="/auth">  <!--Form for submitting first and last name-->
+      Usrename: <input type="text" name="user"><br>
+      Passowrd: <input type="text" name="pw"><br>
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+
+</html>
