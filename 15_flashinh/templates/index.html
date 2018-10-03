@@ -1,0 +1,48 @@
+<!--
+Duckies - Daniel Gelfand and Ricky Lin
+SoftDev1 pd6
+K#15 Oh yes, perhaps I do...
+2018-10-03
+-->
+<!DOCTYPE HTML>
+
+<html>
+
+  <head>
+  {% block head %}
+      <title>
+        {% block title %}
+        {% endblock %}
+        -- Webpage
+      </title>
+  {% endblock %}
+  </head>
+
+  <body>
+
+{% block content %}
+	   You are currently not logged in. <br>
+
+      <!-- Displays flashed messages -->
+   {% set msgs = get_flashed_messages() %}
+   {% for each in msgs %}
+   {{each}}
+   <br>
+   {% endfor %}
+   <br>
+    <form action="/auth">  <!--Form for submitting first and last name-->
+      Usrename: <input type="text" name="user"><br>
+      Passowrd: <input type="text" name="pw"><br>
+      <input type="submit" value="Submit">
+    </form>
+
+{% endblock %}
+
+    <!-- Footer with Copyright symbol -->
+    {% block footer %}
+      &copy; Copyright 2018 by <b> Duckies - RL and DG </b>
+    {% endblock %}
+
+  </body>
+
+</html>
