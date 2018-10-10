@@ -25,9 +25,10 @@ def compAvg():
     return(grades)
 
 def peeps_avg(grades):
-    c.execute("CREATE TABLE peeps_avg(name STRING, avg INTEGER)")  #create new table with name and average columns
+    c.execute("CREATE TABLE {0}({1}, {2})".format("peeps_avg", "name", "avg"))#create new table with name and average columns
     for idnum,avg in grades.items():  #iterate through grades
-        c.execute("INSERT INTO peeps_avg VALUES(" + str(idnum) + ","+ str(avg[1])+")") #insert the student id and respective avg into table
+        params = (idnum, avg[1])      
+        c.execute("INSERT INTO peeps_avg VALUES(?,?)", params) #insert the student id and respective avg into table
 
 def addcourses(c,g,i):  
     with open("data/courses.csv","a",newline='') as file:  #opens courses csv
