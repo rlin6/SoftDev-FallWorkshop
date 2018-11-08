@@ -4,8 +4,7 @@
   K#21: Who Does Frame Work For?
   M 2018-11-08
 */
-
-.cell small{
+.cell:not(#input){
   border:1px solid black;
 }
 
